@@ -1,0 +1,84 @@
+:root{
+  --bg:#0b0d10;
+  --panel:#15171a;
+  --accent:#2fa8ff;
+  --muted:#bfc6cf;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, "Segoe UI", Arial, sans-serif;
+  background:var(--bg);
+  color:var(--muted);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 24px;
+  background:linear-gradient(180deg,var(--panel),#111216);
+  border-bottom:1px solid #1f2124;
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo{height:36px;width:auto}
+.brand{color:var(--accent);font-weight:700;letter-spacing:2px}
+.nav a{
+  color:#c7cbd0;
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:600;
+}
+.nav a.active, .nav a:hover{color:var(--accent)}
+.hero{
+  min-height:60vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:48px 20px;
+}
+.hero h1{color:#fff;margin:0 0 12px;font-size:32px}
+.hero p{max-width:720px;color:#d3d7db;margin:0 0 18px}
+.cta{
+  background:var(--accent);
+  color:#071018;
+  padding:12px 20px;
+  border-radius:6px;
+  font-weight:700;
+  text-decoration:none;
+}
+.content{
+  max-width:1000px;
+  margin:36px auto;
+  padding:0 20px 60px;
+}
+h2{color:var(--accent);margin-top:0}
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:18px;
+}
+.service{
+  background:#0f1113;
+  padding:18px;
+  border-radius:10px;
+  border:1px solid #1b1d20;
+}
+.contact-card{background:#0f1113;padding:16px;border-radius:10px;border:1px solid #1b1d20}
+.footer{
+  padding:18px 10px;
+  text-align:center;
+  color:#8a8f95;
+  border-top:1px solid #16171a;
+}
+@media(max-width:640px){
+  .nav{display:none}
+  .hero h1{font-size:26px}
+}
