@@ -42,22 +42,24 @@
   <label>Message</label>
   <textarea name="message" required></textarea>
 
-  <!-- reCAPTCHA widget -->
-  <div class="g-recaptcha" data-sitekey="6LcPJfYrAAAAAOI4hW9dx3ZVld2J_oeSXwFAcVUj"></div>
+ <form action="https://formspree.io/f/xrbozbnd" method="POST">
+  <label>Name</label>
+  <input type="text" name="name" required>
+
+  <label>Email</label>
+  <input type="email" name="email" required>
+
+  <label>Message</label>
+  <textarea name="message" required></textarea>
+
+  <!-- reCAPTCHA -->
+  <div class="g-recaptcha" data-sitekey="6LcPJfYrAAAAANOTCRk61jBcZlPiGXBmYz_BaRWz"></div>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <button type="submit">Send</button>
 </form>
-
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-  </main>
-
-  <footer class="footer">
-    <p>© 2025 DHW — All Rights Reserved</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
+
 
 
