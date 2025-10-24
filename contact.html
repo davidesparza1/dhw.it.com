@@ -32,6 +32,24 @@
       <p><strong>Email:</strong> <a href="mailto:david.esparza.tx@gmail.com">david.esparza.tx@gmail.com</a></p>
       <p><strong>Phone:</strong> <a href="tel:+12104529117">(210) 452-9117</a></p>
     </div>
+    <form id="contact-form" action="/.netlify/functions/contact" method="POST">
+  <label>Name</label>
+  <input name="name" required />
+
+  <label>Email</label>
+  <input name="email" type="email" required />
+
+  <label>Message</label>
+  <textarea name="message" required></textarea>
+
+  <!-- reCAPTCHA widget -->
+  <div class="g-recaptcha" data-sitekey="6LcPJfYrAAAAAOI4hW9dx3ZVld2J_oeSXwFAcVUj"></div>
+
+  <button type="submit">Send</button>
+</form>
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   </main>
 
   <footer class="footer">
@@ -41,4 +59,5 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
