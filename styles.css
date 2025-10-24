@@ -149,6 +149,46 @@ h2 {
   border-top: 1px solid #16171a;
 }
 
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.menu-toggle.active {
+  color: #fff;
+}
+
+/* Responsive Nav Behavior */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #0f1113;
+    border-top: 1px solid #1f2124;
+    padding: 10px 0;
+    margin-top: 10px;
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: 10px 20px;
+    margin: 0;
+  }
+}
+
 /* ===============================
    📱 MOBILE & TABLET RESPONSIVE
    =============================== */
@@ -193,3 +233,4 @@ h2 {
     text-align: center;
   }
 }
+
