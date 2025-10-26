@@ -32,28 +32,67 @@
     Show your support for DHW with our exclusive tech-inspired gear.
   </p>
 
-  <section class="merch-grid">
-    <div class="merch-item">
-      <img src="images/shirt.jpg" alt="DHW T-Shirt">
-      <h3>DHW Tactical Tee</h3>
-      <p>Comfortable and stylish. Perfect for IT warriors.</p>
-      <a href="#" class="button">Buy Now</a>
-    </div>
+ <section id="merch">
+  <h2>DHW Official Merch</h2>
+  <div id="product-component-1234567890"></div>
 
-    <div class="merch-item">
-      <img src="images/hoodie.jpg" alt="DHW Hoodie">
-      <h3>DHW Hoodie</h3>
-      <p>Stay warm and sharp with the official DHW hoodie.</p>
-      <a href="#" class="button">Buy Now</a>
-    </div>
+  <script type="text/javascript">
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit();
+        } else {
+          loadScript();
+        }
+      } else {
+        loadScript();
+      }
 
-    <div class="merch-item">
-      <img src="images/mug.jpg" alt="DHW Mug">
-      <h3>DHW Mug</h3>
-      <p>Fuel your late-night troubleshooting with this sturdy mug.</p>
-      <a href="#" class="button">Buy Now</a>
-    </div>
-  </section>
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.head || document.body).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'YOUR-SHOP-NAME.myshopify.com',
+          storefrontAccessToken: 'YOUR-STOREFRONT-TOKEN',
+        });
+
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          ui.createComponent('product', {
+            id: 'YOUR_PRODUCT_ID',
+            node: document.getElementById('product-component-1234567890'),
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: {
+              product: {
+                buttonDestination: 'checkout',
+                layout: 'vertical',
+                width: '240px',
+                contents: {
+                  img: true,
+                  title: true,
+                  price: true,
+                  button: true
+                },
+                styles: {
+                  product: { textAlign: 'center' },
+                  button: { backgroundColor: '#222', color: '#fff', borderRadius: '8px' }
+                }
+              },
+              cart: { startOpen: false }
+            },
+          });
+        });
+      }
+    })();
+  </script>
+</section>
+
 </main>
 
 
@@ -65,6 +104,7 @@
 
 </body>
 </html>
+
 
 
 
