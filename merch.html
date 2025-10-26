@@ -61,8 +61,19 @@
     <p>© 2025 DHW — All Rights Reserved</p>
   </footer>
 
-  <script src="script.js"></script>
+<script>
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+      menuToggle.classList.toggle("active");
+    });
+  }
+</script>
 </body>
 </html>
+
 
 
